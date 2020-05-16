@@ -1,63 +1,20 @@
-# Repositorio sxe_tests
+# Repositorio si_tests
 
 ## Objetivo
 
-Este repositorio contiene herramientas para la realización de tests en las tareas del módulo de SXE del ciclo de DAM
+Este repositorio contiene herramientas para la realización de tests en las tareas del módulo de SI de los ciclos de DAM y DAW
 
 ## Estructura del repositorio
 
-**Este repositorio dispondrá de una rama (branch) para cada tarea a validar,** el nombre de la rama será un identificador ilustrativo de la tarea. Por ejemplo: la branch **implantacion_1** del repositorio será la asociada a la tarea identificada como implantacion_1, etc.
+**Este repositorio dispondrá de una rama (branch) para cada tarea a validar,** el nombre de la rama será un identificador ilustrativo de la tarea. Por ejemplo: la branch **sa_crear** del repositorio será la asociada a la tarea identificada como sa_crear, etc.
 
-Por tanto deberemos descargar la branch adecuada. **Por ejemplo para ejecutar los tests de la tarea implantacion_1:**
+Por tanto deberemos descargar la branch adecuada. **Por ejemplo para ejecutar los tests de la tarea sa_crear:**
 
-`git clone -b implantacion_1 git@github.com:javierfp-isc/sxe_tests.git`
+`git clone -b sa_crear git@github.com:javierfp-isc/si_tests.git`
 
 El mismo procedimiento se aplicaría a las demás tareas descargando la rama adecuada.
 
 ## Contenidos
-
-### Módulo Odoo para ejecución de tests
-
-Se ha creado un módulo de Odoo en el directorio **modulo/sxe_tests** el cual contiene:
-
-#### Web Controller
-
-Asociado a la URL: **sxe_tests/nombre_unidad**
-Este servirá como punto de entrada para la realización de los tests. Veamos un ejemplo:
-
-`http://localhost:8069/sxe_tests/implantacion/?login=admin&password=abc123.&metodo=test_modulo_instalado&modulo=account`
-
-La URL anterior invoca al método *test_modulo* del modelo asociado a los tests de la unidad de nombre *implantacion*
-
-Además se pasan los parámetros para el login de Odoo y la información necesaria para el método.
-
-#### Respuestas del Web Controller
-
-Los códigos de respuesta para interpretar los resultados devueltos por el Controller son:
-
-- **EXITO**: Se ha pasado el test
-- **FALLO**: No se ha pasado el test
-- **ERROR**: Ha ocurrido algún error
-
-#### Modelos asociados
-
-Se creará un modelo por cada unidad, de este modo cada URL del controller estará asociada a una unidad (trozo de la URL que viene después de *sxe_tests*), cada unidad tendrá un modelo asociado donde se definirán los métodos de tests. Además los parámetros de cada método serán suministrados a través de la petición (vía GET, como en el ejemplo anterior, o vía POST)
-
-Los modelos serán nombrados del modo siguiente: *tests.nombre_unidad*
-
-Por ejemplo para la unidad de implantación el modelo asociado en Odoo a la realización de los tests es **tests.implantacion**
-
-#### Instalación del módulo de Odoo para realizar los tests
-
-Antes de nada hay que instalar el **módulo de Odoo sxe_tests** mencionado en el apartado anterior. El módulo se encuentra dentro del directorio **modulo** del repositorio, por tanto deberemos incorporar ese módulo en un directorio accesible desde el **addons_path** de la instancia de Odoo en el que lo vamos a instalar.
-
-Supongamos que nuestro directorio de módulos de Odoo en el anfitrión es ~/odoo. Entonces ejecutamos:
-
-`cp -r modulo ~/odoo/sxe_tests`
-
-Por tanto en el addons path del container de Odoo, suponiendo que el directorio **~/odoo del anfitrión está mapeado en /opt/odoo/src**, pondríamos:
-
-**addons_path=...,/opt/odoo/src/sxe_tests**
 
 ### Directorio de tests
 

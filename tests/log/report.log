@@ -1,0 +1,88 @@
+
+***********************************************
+### TEST: Odoo running
+
+**CONTAINER:** odoo_1container_odoo_1
+
+**COMANDO:** service odoo.sh status
+
+**SALIDA:** FINE, 1 ODOO-SERVER is Running.
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2
+***********************************************
+### TEST: Addons_path correcto
+
+**CONTAINER:** odoo_1container_odoo_1
+
+**COMANDO:** cat /opt/odoo/conf/odoo.conf | grep addons_path
+
+**SALIDA:** 
+
+**CÓDIGO SALIDA:** 1
+
+**ERROR!** 
+***********************************************
+### TEST: Módulo ventas instalado
+
+**CONTAINER:** odoo_1container_odoo_1
+
+**COMANDO:** curl -G "http://localhost:8069/sxe_tests/implantacion" --data-urlencode login=admin --data-urlencode password=abc123. --data-urlencode metodo=test_modulo_instalado --data-urlencode modulo=sale_management
+
+**SALIDA:** EXITO
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2
+***********************************************
+### TEST: Odoo running
+
+**CONTAINER:** odoo_2container_odoo_1
+
+**COMANDO:** service odoo.sh status
+
+**SALIDA:** FINE, 1 ODOO-SERVER is Running.
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2
+***********************************************
+### TEST: Módulo CRM instalado
+
+**CONTAINER:** odoo_2container_odoo_1
+
+**COMANDO:** curl -G "http://localhost:8069/sxe_tests/implantacion" --data-urlencode login=admin --data-urlencode password=abc123. --data-urlencode metodo=test_modulo_instalado --data-urlencode modulo=crm
+
+**SALIDA:** EXITO
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Módulo website instalado
+
+**CONTAINER:** odoo_2container_odoo_1
+
+**COMANDO:** curl -G "http://localhost:8069/sxe_tests/implantacion" --data-urlencode login=admin --data-urlencode password=abc123. --data-urlencode metodo=test_modulo_instalado --data-urlencode modulo=website
+
+**SALIDA:** EXITO
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Addons_path OCA modules
+
+**CONTAINER:** odoo_2container_odoo_1
+
+**COMANDO:** cat /opt/odoo/conf/odoo.conf | grep addons_path
+
+**SALIDA:** 
+
+**CÓDIGO SALIDA:** 1
+
+**ERROR!** 
+
+### NOTA DE LA TAREA: 8
+

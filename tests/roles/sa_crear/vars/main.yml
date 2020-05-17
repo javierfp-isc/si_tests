@@ -6,27 +6,42 @@ tests:
  - container: "sa_crear_sa_1"
    comandos:
    - nombre: Dispositivo loop99p1
-     comando: "lsblk /dev/loop99p1" 
+     comando: lsblk /dev/loop99p1 
      resultado: "part"
      puntuacion: 1
    - nombre: Dispositivo loop99p2
-     comando: "lsblk /dev/loop99p3" 
+     comando: lsblk /dev/loop99p2 
      resultado: "part"
      puntuacion: 1
    - nombre: SA ext4 /dev/loop99p1
-     comando: "df -T /dev/loop99p1" 
-     resultado: "ext4"
+     comando: blkid /dev/loop99p1 
+     resultado: TYPE=\"ext4\"
      puntuacion: 1     
    - nombre: SA ntfs /dev/loop99p2
-     comando: "df -T /dev/loop99p2" 
-     resultado: "fuseblk"
+     comando: blkid /dev/loop99p2 
+     resultado: TYPE=\"ntfs\"
      puntuacion: 1
    - nombre: Punto montaje /mnt/gatos
-     comando: "mount -l | grep /dev/loop99p1" 
-     resultado: "/mnt/gatos"
+     comando: mount -l | grep /dev/loop99p1 
+     resultado: /mnt/gatos
      puntuacion: 1
    - nombre: Punto montaje /mnt/perros
-     comando: "mount -l | grep /dev/loop99p2" 
-     resultado: "/mnt/perros"
-     puntuacion: 1  
-   #etc 
+     comando: mount -l | grep /dev/loop99p2 
+     resultado: /mnt/perros
+     puntuacion: 1
+   - nombre: Punto montaje /mnt/gatos en fstab
+     comando: cat /etc/fstab | grep /dev/loop99p1 
+     resultado: /mnt/gatos
+     puntuacion: 1
+   - nombre: Punto montaje /mnt/perros en fstab
+     comando: cat /etc/fstab | grep /dev/loop99p2
+     resultado: /mnt/perros
+     puntuacion: 1
+   - nombre: Particion /dev/loop100p1 clonada
+     comando: blkid /dev/loop100p1 | grep "$(blkid /dev/loop99p1 | cut -d':' -f2)"
+     resultado: /dev/loop100p1
+     puntuacion: 1
+   - nombre: Particion /dev/loop100p2 clonada
+     comando: blkid /dev/loop100p2 | grep "$(blkid /dev/loop99p2 | cut -d':' -f2)"
+     resultado: /dev/loop100p2
+     puntuacion: 1 

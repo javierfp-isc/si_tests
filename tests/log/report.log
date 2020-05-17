@@ -6,7 +6,7 @@
 
 **COMANDO:** lsblk /dev/loop99p1
 
-**SALIDA:** loop99p1 259:5    0  500M  0 part /mnt/gatos
+**SALIDA:** loop99p1 259:4    0  500M  0 part /mnt/gatos
 
 **CÓDIGO SALIDA:** 0
 
@@ -16,21 +16,21 @@
 
 **CONTAINER:** sa_crear_sa_1
 
-**COMANDO:** lsblk /dev/loop99p3
+**COMANDO:** lsblk /dev/loop99p2
 
-**SALIDA:** 
+**SALIDA:** loop99p2 259:5    0  499M  0 part /mnt/perros
 
-**CÓDIGO SALIDA:** 1
+**CÓDIGO SALIDA:** 0
 
-**ERROR!** lsblk: /dev/loop99p3: not a block device
+**PUNTUACIÓN:** 1
 ***********************************************
 ### TEST: SA ext4 /dev/loop99p1
 
 **CONTAINER:** sa_crear_sa_1
 
-**COMANDO:** df -T /dev/loop99p1
+**COMANDO:** blkid /dev/loop99p1
 
-**SALIDA:** /dev/loop99p1  ext4    487634  2321    455617   1% /mnt/gatos
+**SALIDA:** /dev/loop99p1: UUID="979d26dd-3c4c-48b7-8051-c3478f711de2" TYPE="ext4" PARTUUID="bfca22e6-01"
 
 **CÓDIGO SALIDA:** 0
 
@@ -40,9 +40,9 @@
 
 **CONTAINER:** sa_crear_sa_1
 
-**COMANDO:** df -T /dev/loop99p2
+**COMANDO:** blkid /dev/loop99p2
 
-**SALIDA:** /dev/loop99p2  fuseblk    510972  3064    507908   1% /mnt/perros
+**SALIDA:** /dev/loop99p2: UUID="42546A3541AEE892" TYPE="ntfs" PTTYPE="dos" PARTUUID="bfca22e6-02"
 
 **CÓDIGO SALIDA:** 0
 
@@ -71,6 +71,54 @@
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
+***********************************************
+### TEST: Punto montaje /mnt/gatos en fstab
 
-### NOTA DE LA TAREA: 5.0
+**CONTAINER:** sa_crear_sa_1
+
+**COMANDO:** cat /etc/fstab | grep /dev/loop99p1
+
+**SALIDA:** /dev/loop99p1 /mnt/gatos ext4 defaults 0 0
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Punto montaje /mnt/perros en fstab
+
+**CONTAINER:** sa_crear_sa_1
+
+**COMANDO:** cat /etc/fstab | grep /dev/loop99p2
+
+**SALIDA:** /dev/loop99p2 /mnt/perros ntfs-3g defaults 0 0
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Particion /dev/loop100p1 clonada
+
+**CONTAINER:** sa_crear_sa_1
+
+**COMANDO:** blkid /dev/loop100p1 | grep ""
+
+**SALIDA:** /dev/loop100p1: UUID="979d26dd-3c4c-48b7-8051-c3478f711de2" TYPE="ext4" PARTUUID="bfca22e6-01"
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Particion /dev/loop100p2 clonada
+
+**CONTAINER:** sa_crear_sa_1
+
+**COMANDO:** blkid /dev/loop100p2 | grep ""
+
+**SALIDA:** /dev/loop100p2: UUID="42546A3541AEE892" TYPE="ntfs" PTTYPE="dos" PARTUUID="bfca22e6-02"
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+
+### NOTA DE LA TAREA: 10.0
 

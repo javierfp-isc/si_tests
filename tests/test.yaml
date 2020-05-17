@@ -23,4 +23,4 @@
    GITLABTOKEN: 9HMCTHQDCJAfeqsPjtzY
 
   roles:
-    - role: tarea_modificar
+    - role: sa_crear

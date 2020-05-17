@@ -1,0 +1,32 @@
+---
+# vars file for roles/sa_crear
+iam: root
+#Comandos de test a ejecutar
+tests:
+ - container: "sa_crear_sa_1"
+   comandos:
+   - nombre: Dispositivo loop99p1
+     comando: "lsblk /dev/loop99p1" 
+     resultado: "part"
+     puntuacion: 1
+   - nombre: Dispositivo loop99p2
+     comando: "lsblk /dev/loop99p3" 
+     resultado: "part"
+     puntuacion: 1
+   - nombre: SA ext4 /dev/loop99p1
+     comando: "df -T /dev/loop99p1" 
+     resultado: "ext4"
+     puntuacion: 1     
+   - nombre: SA ntfs /dev/loop99p2
+     comando: "df -T /dev/loop99p2" 
+     resultado: "fuseblk"
+     puntuacion: 1
+   - nombre: Punto montaje /mnt/gatos
+     comando: "mount -l | grep /dev/loop99p1" 
+     resultado: "/mnt/gatos"
+     puntuacion: 1
+   - nombre: Punto montaje /mnt/perros
+     comando: "mount -l | grep /dev/loop99p2" 
+     resultado: "/mnt/perros"
+     puntuacion: 1  
+   #etc 

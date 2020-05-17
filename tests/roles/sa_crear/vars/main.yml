@@ -1,6 +1,5 @@
 ---
 # vars file for roles/sa_crear
-iam: root
 #Comandos de test a ejecutar
 tests:
  - container: "sa_crear_sa_1"

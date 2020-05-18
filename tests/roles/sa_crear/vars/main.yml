@@ -37,10 +37,10 @@ tests:
      resultado: /mnt/perros
      puntuacion: 1
    - nombre: Particion /dev/loop100p1 clonada
-     comando: blkid /dev/loop100p1 | grep "$(blkid /dev/loop99p1 | cut -d':' -f2)"
-     resultado: /dev/loop100p1
+     comando: "test_loop_clone.sh 1"
+     resultado: "ok"
      puntuacion: 1
    - nombre: Particion /dev/loop100p2 clonada
-     comando: blkid /dev/loop100p2 | grep "$(blkid /dev/loop99p2 | cut -d':' -f2)"
-     resultado: /dev/loop100p2
-     puntuacion: 1 
+     comando: "test_loop_clone.sh 2"
+     resultado: "ok"
+     puntuacion: 1

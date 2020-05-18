@@ -6,7 +6,7 @@
 
 **COMANDO:** lsblk /dev/loop99p1
 
-**SALIDA:** loop99p1 259:4    0  500M  0 part /mnt/gatos
+**SALIDA:** loop99p1 259:4    0 487.3M  0 part 
 
 **CÓDIGO SALIDA:** 0
 
@@ -18,7 +18,7 @@
 
 **COMANDO:** lsblk /dev/loop99p2
 
-**SALIDA:** loop99p2 259:5    0  499M  0 part /mnt/perros
+**SALIDA:** loop99p2 259:5    0  511M  0 part 
 
 **CÓDIGO SALIDA:** 0
 
@@ -30,7 +30,7 @@
 
 **COMANDO:** blkid /dev/loop99p1
 
-**SALIDA:** /dev/loop99p1: UUID="979d26dd-3c4c-48b7-8051-c3478f711de2" TYPE="ext4" PARTUUID="bfca22e6-01"
+**SALIDA:** /dev/loop99p1: UUID="e4297cea-aa95-468c-bdfc-98f2b7779312" TYPE="ext4" PARTUUID="cb61d7a8-01"
 
 **CÓDIGO SALIDA:** 0
 
@@ -42,7 +42,7 @@
 
 **COMANDO:** blkid /dev/loop99p2
 
-**SALIDA:** /dev/loop99p2: UUID="42546A3541AEE892" TYPE="ntfs" PTTYPE="dos" PARTUUID="bfca22e6-02"
+**SALIDA:** /dev/loop99p2: UUID="4E32F74D654B6C1F" TYPE="ntfs" PTTYPE="dos" PARTUUID="cb61d7a8-02"
 
 **CÓDIGO SALIDA:** 0
 
@@ -54,11 +54,11 @@
 
 **COMANDO:** mount -l | grep /dev/loop99p1
 
-**SALIDA:** /dev/loop99p1 on /mnt/gatos type ext4 (rw,relatime)
+**SALIDA:** 
 
-**CÓDIGO SALIDA:** 0
+**CÓDIGO SALIDA:** 1
 
-**PUNTUACIÓN:** 1
+**ERROR!** 
 ***********************************************
 ### TEST: Punto montaje /mnt/perros
 
@@ -66,11 +66,11 @@
 
 **COMANDO:** mount -l | grep /dev/loop99p2
 
-**SALIDA:** /dev/loop99p2 on /mnt/perros type fuseblk (rw,relatime,user_id=0,group_id=0,allow_other,blksize=4096)
+**SALIDA:** 
 
-**CÓDIGO SALIDA:** 0
+**CÓDIGO SALIDA:** 1
 
-**PUNTUACIÓN:** 1
+**ERROR!** 
 ***********************************************
 ### TEST: Punto montaje /mnt/gatos en fstab
 
@@ -78,11 +78,11 @@
 
 **COMANDO:** cat /etc/fstab | grep /dev/loop99p1
 
-**SALIDA:** /dev/loop99p1 /mnt/gatos ext4 defaults 0 0
+**SALIDA:** 
 
-**CÓDIGO SALIDA:** 0
+**CÓDIGO SALIDA:** 1
 
-**PUNTUACIÓN:** 1
+**ERROR!** 
 ***********************************************
 ### TEST: Punto montaje /mnt/perros en fstab
 
@@ -90,19 +90,19 @@
 
 **COMANDO:** cat /etc/fstab | grep /dev/loop99p2
 
-**SALIDA:** /dev/loop99p2 /mnt/perros ntfs-3g defaults 0 0
+**SALIDA:** 
 
-**CÓDIGO SALIDA:** 0
+**CÓDIGO SALIDA:** 1
 
-**PUNTUACIÓN:** 1
+**ERROR!** 
 ***********************************************
 ### TEST: Particion /dev/loop100p1 clonada
 
 **CONTAINER:** sa_crear_sa_1
 
-**COMANDO:** blkid /dev/loop100p1 | grep ""
+**COMANDO:** test_loop_clone.sh 1
 
-**SALIDA:** /dev/loop100p1: UUID="979d26dd-3c4c-48b7-8051-c3478f711de2" TYPE="ext4" PARTUUID="bfca22e6-01"
+**SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
@@ -112,13 +112,13 @@
 
 **CONTAINER:** sa_crear_sa_1
 
-**COMANDO:** blkid /dev/loop100p2 | grep ""
+**COMANDO:** test_loop_clone.sh 2
 
-**SALIDA:** /dev/loop100p2: UUID="42546A3541AEE892" TYPE="ntfs" PTTYPE="dos" PARTUUID="bfca22e6-02"
+**SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 
-### NOTA DE LA TAREA: 10.0
+### NOTA DE LA TAREA: 6.0
 

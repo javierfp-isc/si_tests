@@ -6,41 +6,41 @@ tests:
    comandos:
    - nombre: Ejercicio1
      comando: test.sh ejercicio1
-     resultado: ""
+     resultado: "204K"
      puntuacion: 1
    - nombre: Ejercicio2
      comando: test.sh ejercicio2
-     resultado: ""
+     resultado: "271kB"
      puntuacion: 1
    - nombre: Ejercicio3
      comando: test.sh ejercicio3
-     resultado: ""
+     resultado: "332K"
      puntuacion: 1
    - nombre: Ejercicio4
      comando: test.sh ejercicio4
-     resultado: ""
+     resultado: "1260K"
      puntuacion: 1
    - nombre: Ejercicio5
      comando: test.sh ejercicio5
-     resultado: ""
+     resultado: "10"
      puntuacion: 1
    - nombre: Ejercicio6
      comando: test.sh ejercicio6
-     resultado: ""
+     resultado: "5"
      puntuacion: 1
    - nombre: Ejercicio7
      comando: test.sh ejercicio7
-     resultado: ""
+     resultado: "15"
      puntuacion: 1
    - nombre: Ejercicio8
      comando: test.sh ejercicio8
-     resultado: ""
+     resultado: "14"
      puntuacion: 1
    - nombre: Ejercicio9
      comando: test.sh ejercicio9
-     resultado: ""
+     resultado: "89"
      puntuacion: 1
    - nombre: Ejercicio10
      comando: test.sh ejercicio10
-     resultado: ""
+     resultado: "5"
      puntuacion: 1

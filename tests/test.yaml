@@ -1,5 +1,5 @@
 
-- name: Tests sa_gestion
+- name: Tests config_usuarios
   hosts: localhost
   
   vars:
@@ -23,4 +23,4 @@
    GITLABTOKEN: 9HMCTHQDCJAfeqsPjtzY
 
   roles:
-    - role: sa_gestion
+    - role: config_usuarios

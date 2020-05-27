@@ -1,0 +1,70 @@
+---
+# vars file for roles/config_usuarios
+#Comandos de test a ejecutar
+tests:
+ - container: "config_usuarios_usuarios_1"
+   comandos:
+   - nombre: Grupo principal carlos
+     comando: id -gn carlos
+     resultado: "administrativos"
+     puntuacion: 1
+   - nombre: Grupo principal maria
+     comando: id -gn maria
+     resultado: "administrativos"
+     puntuacion: 1
+   - nombre: Grupo principal raul
+     comando: id -gn raul
+     resultado: "desarrolladores"
+     puntuacion: 1
+   - nombre: Grupo principal sofia
+     comando: id -gn sofia
+     resultado: "desarrolladores"
+     puntuacion: 1
+   - nombre: Propietario y Grupo /home/administrativos
+     comando: ls -ld /home/administrativos | cut -d' ' -f3-4
+     resultado: "\"root administrativos\""
+     puntuacion: 1
+   - nombre: Propietario y Grupo /home/desarrolladores
+     comando: ls -ld /home/desarrolladores | cut -d' ' -f3-4
+     resultado: "\"root desarrolladores\""
+     puntuacion: 1
+   - nombre: Permisos /home/administrativos
+     comando: ls -ld /home/administrativos | cut -d' ' -f1
+     resultado: "drwxrwxr--"
+     puntuacion: 1
+   - nombre: Permisos /home/desarrolladores
+     comando: ls -ld /home/desarrolladores | cut -d' ' -f1
+     resultado: "drwxrwxr--"
+     puntuacion: 1
+   - nombre: Permisos /home/desarrolladores/privado
+     comando: ls -ld /home/desarrolladores/privado | cut -d' ' -f1
+     resultado: "drwx------"
+     puntuacion: 1
+   - nombre: Permisos /home/administrativos/privado
+     comando: ls -ld /home/administrativos/privado | cut -d' ' -f1
+     resultado: "drwx------"
+     puntuacion: 1
+   - nombre: Permisos /home/desarrolladores/publico
+     comando: ls -ld /home/desarrolladores/publico | cut -d' ' -f1
+     resultado: "drwxrwxrwx"
+     puntuacion: 1
+   - nombre: Permisos /home/administrativos/publico
+     comando: ls -ld /home/administrativos/publico | cut -d' ' -f1
+     resultado: "drwxrwxrwx"
+     puntuacion: 1
+   - nombre: Propietario /home/administrativos/maria
+     comando: ls -l /home/administrativos/maria | cut -d' ' -f3
+     resultado: "maria"
+     puntuacion: 1
+   - nombre: Propietario /home/desarrolladores/raul
+     comando: ls -l /home/desarrolladores/raul | cut -d' ' -f3
+     resultado: "raul"
+     puntuacion: 1
+   - nombre: Link /home/administrativos/desarrolladores
+     comando: ls -l /home/administrativos/desarrolladores | cut -d' ' -f1
+     resultado: "lrwxrwxrwx"
+     puntuacion: 1
+   - nombre: Link /home/desarrolladores/administrativos
+     comando: ls -l /home/desarrolladores/administrativos | cut -d' ' -f1
+     resultado: "lrwxrwxrwx"
+     puntuacion: 1

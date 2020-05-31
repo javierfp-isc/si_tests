@@ -1,196 +1,124 @@
 
 ***********************************************
-### TEST: Grupo principal carlos
+### TEST: ACLs web
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** id -gn carlos
+**COMANDO:** bash -c "getfacl /REPOSITORIO/web | sort | pcregrep -M 'group:gcomer:r-x\ngroup:gsist:r-x\ngroup:gweb:rwx' | wc -l"
 
-**SALIDA:** administrativos
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Grupo principal maria
+### TEST: ACLs default web
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** id -gn maria
+**COMANDO:** bash -c "getfacl /REPOSITORIO/web | sort | pcregrep -M 'default:group:gcomer:r-x\ndefault:group:gsist:r-x\ndefault:group:gweb:rwx' | wc -l"
 
-**SALIDA:** administrativos
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Grupo principal raul
+### TEST: ACLs erp
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** id -gn raul
+**COMANDO:** bash -c "getfacl /REPOSITORIO/erp | sort | pcregrep -M 'group:gcomer:r-x\ngroup:gerp:rwx\ngroup:gsist:r-x' | wc -l"
 
-**SALIDA:** desarrolladores
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Grupo principal sofia
+### TEST: ACLs default erp
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** id -gn sofia
+**COMANDO:** bash -c "getfacl /REPOSITORIO/erp | sort | pcregrep -M 'default:group:gcomer:r-x\ndefault:group:gerp:rwx\ndefault:group:gsist:r-x' | wc -l"
 
-**SALIDA:** desarrolladores
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Propietario y Grupo /home/administrativos
+### TEST: ACLs git
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** ls -ld /home/administrativos | cut -d' ' -f3-4
+**COMANDO:** bash -c "getfacl /REPOSITORIO/git | sort | pcregrep -M 'group:gerp:r-x\ngroup:gsist:r-x\ngroup:gweb:r-x' | wc -l"
 
-**SALIDA:** root administrativos
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Propietario y Grupo /home/desarrolladores
+### TEST: ACLs default git
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** ls -ld /home/desarrolladores | cut -d' ' -f3-4
+**COMANDO:** bash -c "getfacl /REPOSITORIO/git | sort | pcregrep -M 'default:group:gerp:r-x\ndefault:group:gsist:r-x\ndefault:group:gweb:r-x' | wc -l"
 
-**SALIDA:** root desarrolladores
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Permisos /home/administrativos
+### TEST: ACLs publico
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** ls -ld /home/administrativos | cut -d' ' -f1
+**COMANDO:** bash -c "getfacl /REPOSITORIO/publico | sort | pcregrep -M 'group:gcomer:rwx\ngroup:gerp:r-x\ngroup:gsist:r-x\ngroup:gweb:r-x' | wc -l"
 
-**SALIDA:** drwxrwxr--
+**SALIDA:** 4
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Permisos /home/desarrolladores
+### TEST: ACLs default publico
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** ls -ld /home/desarrolladores | cut -d' ' -f1
+**COMANDO:** bash -c "getfacl /REPOSITORIO/publico | sort | pcregrep -M 'default:group:gcomer:rwx\ndefault:group:gerp:r-x\ndefault:group:gsist:r-x\ndefault:group:gweb:r-x' | wc -l"
 
-**SALIDA:** drwxrwxr--
+**SALIDA:** 4
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Permisos /home/desarrolladores/privado
+### TEST: ACLs tools
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** ls -ld /home/desarrolladores/privado | cut -d' ' -f1
+**COMANDO:** bash -c "getfacl /REPOSITORIO/tools | sort | pcregrep -M 'group:gerp:r-x\ngroup:gsist:rwx\ngroup:gweb:r-x' | wc -l"
 
-**SALIDA:** drwx------
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Permisos /home/administrativos/privado
+### TEST: ACLs default tools
 
 **CONTAINER:** config_usuarios_usuarios_1
 
-**COMANDO:** ls -ld /home/administrativos/privado | cut -d' ' -f1
+**COMANDO:** bash -c "getfacl /REPOSITORIO/tools | sort | pcregrep -M 'default:group:gerp:r-x\ndefault:group:gsist:rwx\ndefault:group:gweb:r-x' | wc -l"
 
-**SALIDA:** drwx------
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Permisos /home/desarrolladores/publico
-
-**CONTAINER:** config_usuarios_usuarios_1
-
-**COMANDO:** ls -ld /home/desarrolladores/publico | cut -d' ' -f1
-
-**SALIDA:** drwxrwxrwx
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Permisos /home/administrativos/publico
-
-**CONTAINER:** config_usuarios_usuarios_1
-
-**COMANDO:** ls -ld /home/administrativos/publico | cut -d' ' -f1
-
-**SALIDA:** drwxrwxrwx
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Propietario /home/administrativos/maria
-
-**CONTAINER:** config_usuarios_usuarios_1
-
-**COMANDO:** ls -l /home/administrativos/maria | cut -d' ' -f3
-
-**SALIDA:** maria
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Propietario /home/desarrolladores/raul
-
-**CONTAINER:** config_usuarios_usuarios_1
-
-**COMANDO:** ls -l /home/desarrolladores/raul | cut -d' ' -f3
-
-**SALIDA:** raul
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Link /home/administrativos/desarrolladores
-
-**CONTAINER:** config_usuarios_usuarios_1
-
-**COMANDO:** ls -l /home/administrativos/desarrolladores | cut -d' ' -f1
-
-**SALIDA:** lrwxrwxrwx
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Link /home/desarrolladores/administrativos
-
-**CONTAINER:** config_usuarios_usuarios_1
-
-**COMANDO:** ls -l /home/desarrolladores/administrativos | cut -d' ' -f1
-
-**SALIDA:** lrwxrwxrwx
+**SALIDA:** 3
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 
-### NOTA DE LA TAREA: 16.0
+### NOTA DE LA TAREA: 10.0
 

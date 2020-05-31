@@ -1,5 +1,5 @@
 
-- name: Tests config_usuarios
+- name: Tests config_acls
   hosts: localhost
   
   vars:
@@ -23,4 +23,4 @@
    GITLABTOKEN: 9HMCTHQDCJAfeqsPjtzY
 
   roles:
-    - role: config_usuarios
+    - role: config_acls

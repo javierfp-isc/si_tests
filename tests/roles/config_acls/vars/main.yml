@@ -1,0 +1,46 @@
+---
+# vars file for roles/config_acls
+#Comandos de test a ejecutar
+tests:
+ - container: "config_acls_acls_1"
+   comandos:
+   - nombre: ACLs web
+     comando: bash -c "getfacl /REPOSITORIO/web | sort | pcregrep -M 'group:gcomer:r-x\ngroup:gsist:r-x\ngroup:gweb:rwx' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs default web
+     comando: bash -c "getfacl /REPOSITORIO/web | sort | pcregrep -M 'default:group:gcomer:r-x\ndefault:group:gsist:r-x\ndefault:group:gweb:rwx' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs erp
+     comando: bash -c "getfacl /REPOSITORIO/erp | sort | pcregrep -M 'group:gcomer:r-x\ngroup:gerp:rwx\ngroup:gsist:r-x' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs default erp
+     comando: bash -c "getfacl /REPOSITORIO/erp | sort | pcregrep -M 'default:group:gcomer:r-x\ndefault:group:gerp:rwx\ndefault:group:gsist:r-x' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs git
+     comando: bash -c "getfacl /REPOSITORIO/git | sort | pcregrep -M 'group:gerp:r-x\ngroup:gsist:r-x\ngroup:gweb:r-x' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs default git
+     comando: bash -c "getfacl /REPOSITORIO/git | sort | pcregrep -M 'default:group:gerp:r-x\ndefault:group:gsist:r-x\ndefault:group:gweb:r-x' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs publico
+     comando: bash -c "getfacl /REPOSITORIO/publico | sort | pcregrep -M 'group:gcomer:rwx\ngroup:gerp:r-x\ngroup:gsist:r-x\ngroup:gweb:r-x' | wc -l"
+     resultado: "4"
+     puntuacion: 1
+   - nombre: ACLs default publico
+     comando: bash -c "getfacl /REPOSITORIO/publico | sort | pcregrep -M 'default:group:gcomer:rwx\ndefault:group:gerp:r-x\ndefault:group:gsist:r-x\ndefault:group:gweb:r-x' | wc -l"
+     resultado: "4"
+     puntuacion: 1
+   - nombre: ACLs tools
+     comando: bash -c "getfacl /REPOSITORIO/tools | sort | pcregrep -M 'group:gerp:r-x\ngroup:gsist:rwx\ngroup:gweb:r-x' | wc -l"
+     resultado: "3"
+     puntuacion: 1
+   - nombre: ACLs default tools
+     comando: bash -c "getfacl /REPOSITORIO/tools | sort | pcregrep -M 'default:group:gerp:r-x\ndefault:group:gsist:rwx\ndefault:group:gweb:r-x' | wc -l"
+     resultado: "3"
+     puntuacion: 1

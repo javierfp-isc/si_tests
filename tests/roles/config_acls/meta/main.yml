@@ -1,6 +1,6 @@
 galaxy_info:
   author: javierfp
-  description: Tests de Tarea config_usuarios
+  description: Tests de Tarea config_acls
   company: Módulo SI
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -49,9 +49,9 @@ galaxy_info:
 
 dependencies:
 #Pasamos la lista de containers del escenario para hacer el start
-- { role: start, containers: [config_usuarios_usuarios_1]}
+- { role: start, containers: [config_acls_acls_1]}
 - { role: tests, comandos: "{{ tests }}"}
-- { role: entregar, practica: config_usuarios}
+- { role: entregar, practica: config_acls}
 #Pasamos la lista de containers del escenario para hacer el stop
 #- { role: stop, containers: [config_usuarios_usuarios_1]}
 

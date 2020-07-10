@@ -23,4 +23,4 @@
    GITLABTOKEN: 9HMCTHQDCJAfeqsPjtzY
 
   roles:
-    - role: tarea_modificar
+    - role: redes_enrutamiento

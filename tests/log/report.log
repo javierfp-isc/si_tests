@@ -1,88 +1,172 @@
 
 ***********************************************
-### TEST: Odoo running
+### TEST: Destinos NO alcanzables
 
-**CONTAINER:** odoo_1container_odoo_1
+**CONTAINER:** redes_enrutamiento_adm1_1
 
-**COMANDO:** service odoo.sh status
+**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"
 
-**SALIDA:** FINE, 1 ODOO-SERVER is Running.
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 2
-***********************************************
-### TEST: Addons_path correcto
-
-**CONTAINER:** odoo_1container_odoo_1
-
-**COMANDO:** cat /opt/odoo/conf/odoo.conf | grep addons_path
-
-**SALIDA:** 
-
-**CÓDIGO SALIDA:** 1
-
-**ERROR!** 
-***********************************************
-### TEST: Módulo ventas instalado
-
-**CONTAINER:** odoo_1container_odoo_1
-
-**COMANDO:** curl -G "http://localhost:8069/sxe_tests/implantacion" --data-urlencode login=admin --data-urlencode password=abc123. --data-urlencode metodo=test_modulo_instalado --data-urlencode modulo=sale_management
-
-**SALIDA:** EXITO
+**SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
-**PUNTUACIÓN:** 2
+**PUNTUACIÓN:** 0.5
 ***********************************************
-### TEST: Odoo running
+### TEST: Destinos alcanzables
 
-**CONTAINER:** odoo_2container_odoo_1
+**CONTAINER:** redes_enrutamiento_adm1_1
 
-**COMANDO:** service odoo.sh status
+**COMANDO:** bash -c "ping -c1 -W1 google.es && echo ok"
 
-**SALIDA:** FINE, 1 ODOO-SERVER is Running.
+**SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
-**PUNTUACIÓN:** 2
+**PUNTUACIÓN:** 0.5
 ***********************************************
-### TEST: Módulo CRM instalado
+### TEST: Destinos NO alcanzables
 
-**CONTAINER:** odoo_2container_odoo_1
+**CONTAINER:** redes_enrutamiento_adm2_1
 
-**COMANDO:** curl -G "http://localhost:8069/sxe_tests/implantacion" --data-urlencode login=admin --data-urlencode password=abc123. --data-urlencode metodo=test_modulo_instalado --data-urlencode modulo=crm
+**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"
 
-**SALIDA:** EXITO
+**SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
-**PUNTUACIÓN:** 1
+**PUNTUACIÓN:** 0.5
 ***********************************************
-### TEST: Módulo website instalado
+### TEST: Destinos alcanzables
 
-**CONTAINER:** odoo_2container_odoo_1
+**CONTAINER:** redes_enrutamiento_adm2_1
 
-**COMANDO:** curl -G "http://localhost:8069/sxe_tests/implantacion" --data-urlencode login=admin --data-urlencode password=abc123. --data-urlencode metodo=test_modulo_instalado --data-urlencode modulo=website
+**COMANDO:** bash -c "ping -c1 -W1 google.es && echo ok"
 
-**SALIDA:** EXITO
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0.5
+***********************************************
+### TEST: Destinos NO alcanzables
+
+**CONTAINER:** redes_enrutamiento_god10_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.120.121 || echo ok"
+
+**SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Addons_path OCA modules
+### TEST: Destinos alcanzables
 
-**CONTAINER:** odoo_2container_odoo_1
+**CONTAINER:** redes_enrutamiento_god10_1
 
-**COMANDO:** cat /opt/odoo/conf/odoo.conf | grep addons_path
+**COMANDO:** bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok"
 
-**SALIDA:** 
+**SALIDA:** ok
 
-**CÓDIGO SALIDA:** 1
+**CÓDIGO SALIDA:** 0
 
-**ERROR!** 
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Destinos NO alcanzables
 
-### NOTA DE LA TAREA: 8
+**CONTAINER:** redes_enrutamiento_dir1_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Destinos alcanzables
+
+**CONTAINER:** redes_enrutamiento_dir1_1
+
+**COMANDO:** bash -c "ping -c1 -W1 google.es && echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Destinos NO alcanzables
+
+**CONTAINER:** redes_enrutamiento_sat1_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0.5
+***********************************************
+### TEST: Destinos alcanzables
+
+**CONTAINER:** redes_enrutamiento_sat1_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0.5
+***********************************************
+### TEST: Destinos NO alcanzables
+
+**CONTAINER:** redes_enrutamiento_sat10_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0.5
+***********************************************
+### TEST: Destinos alcanzables
+
+**CONTAINER:** redes_enrutamiento_sat10_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0.5
+***********************************************
+### TEST: Destinos NO alcanzables
+
+**CONTAINER:** redes_enrutamiento_server1_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Destinos alcanzables
+
+**CONTAINER:** redes_enrutamiento_server1_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+
+### NOTA DE LA TAREA: 10.0
 

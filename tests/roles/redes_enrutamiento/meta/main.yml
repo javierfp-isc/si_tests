@@ -1,7 +1,7 @@
 galaxy_info:
   author: javierfp
-  description: Tests de Tarea tarea_modificar
-  company: Módulo SXE
+  description: Tests de Tarea redes_enrutamiento
+  company: Módulo SI
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -49,11 +49,11 @@ galaxy_info:
 
 dependencies:
 #Pasamos la lista de containers del escenario para hacer el start
-- { role: start, containers: [container1,container2,]}
+- { role: start, containers: [redes_enrutamiento_adm1_1,redes_enrutamiento_adm2_1,redes_enrutamiento_god10_1,redes_enrutamiento_dir1_1,redes_enrutamiento_sat1_1,redes_enrutamiento_sat10_1,redes_enrutamiento_server1_1,redes_enrutamiento_pe1_1,redes_enrutamiento_pe2_1]}
 - { role: tests, comandos: "{{ tests }}"}
 - { role: entregar, practica: tarea}
 #Pasamos la lista de containers del escenario para hacer el stop
-- { role: stop, containers: [container1,container2]}
+#- { role: stop, containers: [container1,container2]}
 
   # List your role dependencies here, one per line. Be sure to remove the '[]' above,
   # if you add dependencies to this list.

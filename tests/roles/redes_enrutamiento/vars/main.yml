@@ -1,0 +1,75 @@
+---
+# vars file for roles/redes_enrutamiento
+
+#Comandos de test a ejecutar
+tests:
+ - container: "redes_enrutamiento_adm1_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+ - container: "redes_enrutamiento_adm2_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+ - container: "redes_enrutamiento_god10_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.120.121 || echo ok"
+     resultado: "ok"
+     puntuacion: 1
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 1
+ - container: "redes_enrutamiento_dir1_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok"
+     resultado: "ok"
+     puntuacion: 1
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 1
+ - container: "redes_enrutamiento_sat1_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.111.112 || echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+ - container: "redes_enrutamiento_sat10_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.111.112 || echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 0.5
+ - container: "redes_enrutamiento_server1_1"
+   comandos:
+   - nombre: Destinos NO alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok"
+     resultado: "ok"
+     puntuacion: 1
+   - nombre: Destinos alcanzables
+     comando: bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 1

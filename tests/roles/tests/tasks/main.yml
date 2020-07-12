@@ -41,7 +41,7 @@
 
      **CONTAINER:** {{ item.item.0.container }}
 
-     **COMANDO:** {{ item.item.1.comando }}
+     **COMANDO:** {{ item.item.1.comando | regex_replace('&&','-a')}}
 
      **SALIDA:** {{ item.stdout }}
 

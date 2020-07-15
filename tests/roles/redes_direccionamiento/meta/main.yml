@@ -1,6 +1,6 @@
 galaxy_info:
   author: javierfp
-  description: Tests de Tarea redes_enrutamiento
+  description: Tests de Tarea redes_direccionamiento
   company: Módulo SI
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -49,9 +49,9 @@ galaxy_info:
 
 dependencies:
 #Pasamos la lista de containers del escenario para hacer el start
-- { role: start, containers: [redes_enrutamiento_adm1_1,redes_enrutamiento_adm2_1,redes_enrutamiento_god10_1,redes_enrutamiento_dir1_1,redes_enrutamiento_sat1_1,redes_enrutamiento_sat10_1,redes_enrutamiento_server1_1,redes_enrutamiento_pe1_1,redes_enrutamiento_pe2_1]}
+- { role: start, containers: [redes_direccionamiento_host1_1,redes_direccionamiento_host2_1,redes_direccionamiento_host3_1,redes_direccionamiento_host4_1,redes_direccionamiento_enc35_1]}
 - { role: tests, comandos: "{{ tests }}"}
-- { role: entregar, practica: redes_enrutamiento}
+- { role: entregar, practica: redes_direccionamiento}
 #Pasamos la lista de containers del escenario para hacer el stop
 #- { role: stop, containers: [container1,container2]}
 

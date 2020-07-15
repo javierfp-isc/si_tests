@@ -1,240 +1,101 @@
 
-2020-07-12 19:54:03,008 p=7503 u=javierfp n=ansible | changed: [localhost]
-2020-07-12 19:54:03,023 p=7503 u=javierfp n=ansible | TASK [start : ARRANCAR CONTAINERS] ***********************************************************************************************************************************************************************
-2020-07-12 19:54:03,213 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_adm1_1)
-2020-07-12 19:54:03,367 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_adm2_1)
-2020-07-12 19:54:03,517 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_god10_1)
-2020-07-12 19:54:03,669 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_dir1_1)
-2020-07-12 19:54:03,819 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_sat1_1)
-2020-07-12 19:54:03,972 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_sat10_1)
-2020-07-12 19:54:04,121 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_server1_1)
-2020-07-12 19:54:04,285 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_pe1_1)
-2020-07-12 19:54:04,437 p=7503 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_enrutamiento_pe2_1)
-2020-07-12 19:54:04,449 p=7503 u=javierfp n=ansible | TASK [tests : EJECUTAR COMANDOS] *************************************************************************************************************************************************************************
-2020-07-12 19:54:06,764 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_adm1_1 bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok)
-2020-07-12 19:54:07,258 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_adm1_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:09,531 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_adm2_1 bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok)
-2020-07-12 19:54:09,895 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_adm2_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:11,150 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_god10_1 bash -c "ping -c1 -W1 192.168.120.121 || echo ok" | grep ok)
-2020-07-12 19:54:11,467 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_god10_1 bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:14,733 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_dir1_1 bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok)
-2020-07-12 19:54:15,058 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_dir1_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:16,336 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_sat1_1 bash -c "ping -c1 -W1 192.168.111.112 || echo ok" | grep ok)
-2020-07-12 19:54:16,653 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_sat1_1 bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:17,923 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_sat10_1 bash -c "ping -c1 -W1 192.168.111.112 || echo ok" | grep ok)
-2020-07-12 19:54:18,258 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_sat10_1 bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:20,497 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_server1_1 bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok" | grep ok)
-2020-07-12 19:54:20,827 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_enrutamiento_server1_1 bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok" | grep ok)
-2020-07-12 19:54:20,846 p=7503 u=javierfp n=ansible | TASK [tests : TEST PASADOS] ******************************************************************************************************************************************************************************
-2020-07-12 19:54:20,856 p=7503 u=javierfp n=ansible | ok: [localhost] => {
+2020-07-15 19:37:09,239 p=17773 u=javierfp n=ansible | changed: [localhost]
+2020-07-15 19:37:09,249 p=17773 u=javierfp n=ansible | TASK [start : ARRANCAR CONTAINERS] ***********************************************************************************************************************************************************************
+2020-07-15 19:37:09,449 p=17773 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_direccionamiento_host1_1)
+2020-07-15 19:37:09,605 p=17773 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_direccionamiento_host2_1)
+2020-07-15 19:37:09,759 p=17773 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_direccionamiento_host3_1)
+2020-07-15 19:37:09,914 p=17773 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_direccionamiento_host4_1)
+2020-07-15 19:37:10,085 p=17773 u=javierfp n=ansible | changed: [localhost] => (item=ARRANCANDO redes_direccionamiento_enc35_1)
+2020-07-15 19:37:10,096 p=17773 u=javierfp n=ansible | TASK [tests : EJECUTAR COMANDOS] *************************************************************************************************************************************************************************
+2020-07-15 19:37:10,396 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_direccionamiento_host1_1 bash -c "ping -c1 -W1 192.168.3.3 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok" | grep ok)
+2020-07-15 19:37:10,627 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_direccionamiento_host2_1 bash -c "ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok" | grep ok)
+2020-07-15 19:37:10,863 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_direccionamiento_host3_1 bash -c "ping -c1 -W1 192.168.5.5 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok" | grep ok)
+2020-07-15 19:37:11,118 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_direccionamiento_host4_1 bash -c "ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok" | grep ok)
+2020-07-15 19:37:11,454 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=EJECUTANDO docker exec redes_direccionamiento_enc35_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok)
+2020-07-15 19:37:11,466 p=17773 u=javierfp n=ansible | TASK [tests : TEST PASADOS] ******************************************************************************************************************************************************************************
+2020-07-15 19:37:11,476 p=17773 u=javierfp n=ansible | ok: [localhost] => {
     "msg": "ENHORABUENA!. Has superado todos los test"
 }
-2020-07-12 19:54:20,868 p=7503 u=javierfp n=ansible | TASK [tests : CALCULAR NOTA] *****************************************************************************************************************************************************************************
-2020-07-12 19:54:20,906 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok")
-2020-07-12 19:54:20,912 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:20,917 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok")
-2020-07-12 19:54:20,922 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:20,928 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.120.121 || echo ok")
-2020-07-12 19:54:20,934 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:20,941 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok")
-2020-07-12 19:54:20,947 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:20,956 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.111.112 || echo ok")
-2020-07-12 19:54:20,962 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:20,970 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.111.112 || echo ok")
-2020-07-12 19:54:20,977 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:20,984 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok")
-2020-07-12 19:54:20,992 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok")
-2020-07-12 19:54:21,008 p=7503 u=javierfp n=ansible | TASK [tests : MOSTRAR NOTA] ******************************************************************************************************************************************************************************
-2020-07-12 19:54:21,037 p=7503 u=javierfp n=ansible | ok: [localhost] => {
+2020-07-15 19:37:11,487 p=17773 u=javierfp n=ansible | TASK [tests : CALCULAR NOTA] *****************************************************************************************************************************************************************************
+2020-07-15 19:37:11,523 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.3.3 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok")
+2020-07-15 19:37:11,529 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok")
+2020-07-15 19:37:11,534 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.5.5 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok")
+2020-07-15 19:37:11,540 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok")
+2020-07-15 19:37:11,545 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=PROCESANDO bash -c "ping -c1 -W1 google.es && echo ok")
+2020-07-15 19:37:11,558 p=17773 u=javierfp n=ansible | TASK [tests : MOSTRAR NOTA] ******************************************************************************************************************************************************************************
+2020-07-15 19:37:11,585 p=17773 u=javierfp n=ansible | ok: [localhost] => {
     "msg": "10.0"
 }
-2020-07-12 19:54:21,054 p=7503 u=javierfp n=ansible | TASK [tests : ESCRIBIR LOG] ******************************************************************************************************************************************************************************
-2020-07-12 19:54:21,226 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_adm1_1 bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:04.598093', 'end': '2020-07-12 19:54:06.741659', 'delta': '0:00:02.143566', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_adm1_1 bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_adm1_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:21,358 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_adm1_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:06.877785', 'end': '2020-07-12 19:54:07.234881', 'delta': '0:00:00.357096', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_adm1_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_adm1_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:21,489 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_adm2_1 bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:07.370513', 'end': '2020-07-12 19:54:09.510598', 'delta': '0:00:02.140085', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_adm2_1 bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_adm2_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:21,618 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_adm2_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:09.643668', 'end': '2020-07-12 19:54:09.871964', 'delta': '0:00:00.228296', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_adm2_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_adm2_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:21,749 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_god10_1 bash -c "ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:10.030420', 'end': '2020-07-12 19:54:11.124868', 'delta': '0:00:01.094448', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_god10_1 bash -c "ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_god10_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.120.121 || echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:21,877 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_god10_1 bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:11.260512', 'end': '2020-07-12 19:54:11.444222', 'delta': '0:00:00.183710', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_god10_1 bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_god10_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,005 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_dir1_1 bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:11.579489', 'end': '2020-07-12 19:54:14.712251', 'delta': '0:00:03.132762', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_dir1_1 bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_dir1_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,133 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_dir1_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:14.844323', 'end': '2020-07-12 19:54:15.036114', 'delta': '0:00:00.191791', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_dir1_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_dir1_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,262 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_sat1_1 bash -c "ping -c1 -W1 192.168.111.112 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:15.169045', 'end': '2020-07-12 19:54:16.312125', 'delta': '0:00:01.143080', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_sat1_1 bash -c "ping -c1 -W1 192.168.111.112 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_sat1_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.111.112 || echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,391 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_sat1_1 bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:16.448828', 'end': '2020-07-12 19:54:16.634225', 'delta': '0:00:00.185397', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_sat1_1 bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_sat1_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,523 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_sat10_1 bash -c "ping -c1 -W1 192.168.111.112 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:16.768475', 'end': '2020-07-12 19:54:17.903587', 'delta': '0:00:01.135112', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_sat10_1 bash -c "ping -c1 -W1 192.168.111.112 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_sat10_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.111.112 || echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,652 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_sat10_1 bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:18.033820', 'end': '2020-07-12 19:54:18.236154', 'delta': '0:00:00.202334', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_sat10_1 bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_sat10_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.110.111 && ping -c1 -W1 192.168.120.121 && ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 0.5}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,780 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_server1_1 bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:18.374598', 'end': '2020-07-12 19:54:20.478294', 'delta': '0:00:02.103696', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_server1_1 bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_server1_1'}, {'nombre': 'Destinos NO alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,930 p=7503 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_enrutamiento_server1_1 bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-12 19:54:20.607991', 'end': '2020-07-12 19:54:20.807327', 'delta': '0:00:00.199336', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_enrutamiento_server1_1 bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_enrutamiento_server1_1'}, {'nombre': 'Destinos alcanzables', 'comando': 'bash -c "ping -c1 -W1 192.168.112.113 && ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
-2020-07-12 19:54:22,943 p=7503 u=javierfp n=ansible | TASK [tests : ESCRIBIR NOTA LOG] *************************************************************************************************************************************************************************
-2020-07-12 19:54:23,108 p=7503 u=javierfp n=ansible | changed: [localhost]
-2020-07-12 19:54:23,118 p=7503 u=javierfp n=ansible | TASK [entregar : ENTREGAR TAREA] *************************************************************************************************************************************************************************
-2020-07-12 19:54:23,166 p=7503 u=javierfp n=ansible | included: /home/javierfp/GITHUB/javierfpisc/SI/si_tests/tests/roles/entregar/tasks/entregar.yaml for localhost
-2020-07-12 19:54:23,179 p=7503 u=javierfp n=ansible | TASK [entregar : ENTREGAR TAREA] *************************************************************************************************************************************************************************
-2020-07-12 19:54:23,209 p=7503 u=javierfp n=ansible | ok: [localhost] => {
+2020-07-15 19:37:11,595 p=17773 u=javierfp n=ansible | TASK [tests : ESCRIBIR LOG] ******************************************************************************************************************************************************************************
+2020-07-15 19:37:11,789 p=17773 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_direccionamiento_host1_1 bash -c "ping -c1 -W1 192.168.3.3 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-15 19:37:10.260334', 'end': '2020-07-15 19:37:10.376189', 'delta': '0:00:00.115855', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_direccionamiento_host1_1 bash -c "ping -c1 -W1 192.168.3.3 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_direccionamiento_host1_1'}, {'nombre': 'Destinos alcanzables desde host1', 'comando': 'bash -c "ping -c1 -W1 192.168.3.3 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok"', 'resultado': 'ok', 'puntuacion': 2.25}], 'ansible_loop_var': 'item'})
+2020-07-15 19:37:11,932 p=17773 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_direccionamiento_host2_1 bash -c "ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-15 19:37:10.515655', 'end': '2020-07-15 19:37:10.608196', 'delta': '0:00:00.092541', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_direccionamiento_host2_1 bash -c "ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_direccionamiento_host2_1'}, {'nombre': 'Destinos alcanzables desde host2', 'comando': 'bash -c "ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok"', 'resultado': 'ok', 'puntuacion': 2.25}], 'ansible_loop_var': 'item'})
+2020-07-15 19:37:12,070 p=17773 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_direccionamiento_host3_1 bash -c "ping -c1 -W1 192.168.5.5 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-15 19:37:10.739812', 'end': '2020-07-15 19:37:10.845093', 'delta': '0:00:00.105281', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_direccionamiento_host3_1 bash -c "ping -c1 -W1 192.168.5.5 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_direccionamiento_host3_1'}, {'nombre': 'Destinos alcanzables desde host3', 'comando': 'bash -c "ping -c1 -W1 192.168.5.5 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok"', 'resultado': 'ok', 'puntuacion': 2.25}], 'ansible_loop_var': 'item'})
+2020-07-15 19:37:12,214 p=17773 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_direccionamiento_host4_1 bash -c "ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-15 19:37:10.977147', 'end': '2020-07-15 19:37:11.095383', 'delta': '0:00:00.118236', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_direccionamiento_host4_1 bash -c "ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_direccionamiento_host4_1'}, {'nombre': 'Destinos alcanzables desde host4', 'comando': 'bash -c "ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok"', 'resultado': 'ok', 'puntuacion': 2.25}], 'ansible_loop_var': 'item'})
+2020-07-15 19:37:12,363 p=17773 u=javierfp n=ansible | changed: [localhost] => (item={'cmd': 'docker exec redes_direccionamiento_enc35_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', 'stdout': 'ok', 'stderr': '', 'rc': 0, 'start': '2020-07-15 19:37:11.238951', 'end': '2020-07-15 19:37:11.435024', 'delta': '0:00:00.196073', 'changed': False, 'invocation': {'module_args': {'_raw_params': 'docker exec redes_direccionamiento_enc35_1 bash -c "ping -c1 -W1 google.es && echo ok" | grep ok', '_uses_shell': True, 'warn': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['ok'], 'stderr_lines': [], 'failed': False, 'item': [{'container': 'redes_direccionamiento_enc35_1'}, {'nombre': 'Destinos alcanzables desde enc35', 'comando': 'bash -c "ping -c1 -W1 google.es && echo ok"', 'resultado': 'ok', 'puntuacion': 1}], 'ansible_loop_var': 'item'})
+2020-07-15 19:37:12,374 p=17773 u=javierfp n=ansible | TASK [tests : ESCRIBIR NOTA LOG] *************************************************************************************************************************************************************************
+2020-07-15 19:37:12,553 p=17773 u=javierfp n=ansible | changed: [localhost]
+2020-07-15 19:37:12,563 p=17773 u=javierfp n=ansible | TASK [entregar : ENTREGAR TAREA] *************************************************************************************************************************************************************************
+2020-07-15 19:37:12,610 p=17773 u=javierfp n=ansible | included: /home/javierfp/GITHUB/javierfpisc/SI/si_tests/tests/roles/entregar/tasks/entregar.yaml for localhost
+2020-07-15 19:37:12,622 p=17773 u=javierfp n=ansible | TASK [entregar : ENTREGAR TAREA] *************************************************************************************************************************************************************************
+2020-07-15 19:37:12,651 p=17773 u=javierfp n=ansible | ok: [localhost] => {
     "msg": "Se va a crear incidencia con el resultado de la tarea"
 }
-2020-07-12 19:54:23,223 p=7503 u=javierfp n=ansible | TASK [entregar : CREAR INCIDENCIA EN GITLAB] *************************************************************************************************************************************************************
-2020-07-12 19:54:24,407 p=7503 u=javierfp n=ansible | ok: [localhost] => (item=
+2020-07-15 19:37:12,671 p=17773 u=javierfp n=ansible | TASK [entregar : CREAR INCIDENCIA EN GITLAB] *************************************************************************************************************************************************************
+2020-07-15 19:37:14,068 p=17773 u=javierfp n=ansible | ok: [localhost] => (item=
 ***********************************************
-### TEST: Destinos NO alcanzables
+### TEST: Destinos alcanzables desde host1
 
-**CONTAINER:** redes_enrutamiento_adm1_1
+**CONTAINER:** redes_direccionamiento_host1_1
 
-**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"
+**COMANDO:** bash -c "ping -c1 -W1 192.168.3.3 -a ping -c1 -W1 192.168.3.254 -a ping -c1 -W1 192.168.5.4 -a ping -c1 -W1 192.168.5.5 -a echo ok"
 
 **SALIDA:** ok
 
 **CÓDIGO SALIDA:** 0
 
-**PUNTUACIÓN:** 0.5
+**PUNTUACIÓN:** 2.25
 ***********************************************
-### TEST: Destinos alcanzables
+### TEST: Destinos alcanzables desde host2
 
-**CONTAINER:** redes_enrutamiento_adm1_1
+**CONTAINER:** redes_direccionamiento_host2_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.3.2 -a ping -c1 -W1 192.168.3.254 -a ping -c1 -W1 192.168.5.4 -a ping -c1 -W1 192.168.5.5 -a echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2.25
+***********************************************
+### TEST: Destinos alcanzables desde host3
+
+**CONTAINER:** redes_direccionamiento_host3_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.5.5 -a ping -c1 -W1 192.168.5.254 -a ping -c1 -W1 192.168.3.2 -a ping -c1 -W1 192.168.3.3 -a echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2.25
+***********************************************
+### TEST: Destinos alcanzables desde host4
+
+**CONTAINER:** redes_direccionamiento_host4_1
+
+**COMANDO:** bash -c "ping -c1 -W1 192.168.5.4 -a ping -c1 -W1 192.168.5.254 -a ping -c1 -W1 192.168.3.2 -a ping -c1 -W1 192.168.3.3 -a echo ok"
+
+**SALIDA:** ok
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2.25
+***********************************************
+### TEST: Destinos alcanzables desde enc35
+
+**CONTAINER:** redes_direccionamiento_enc35_1
 
 **COMANDO:** bash -c "ping -c1 -W1 google.es -a echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos NO alcanzables
-
-**CONTAINER:** redes_enrutamiento_adm2_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || ping -c1 -W1 192.168.120.121 || echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos alcanzables
-
-**CONTAINER:** redes_enrutamiento_adm2_1
-
-**COMANDO:** bash -c "ping -c1 -W1 google.es -a echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos NO alcanzables
-
-**CONTAINER:** redes_enrutamiento_god10_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.120.121 || echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Destinos alcanzables
-
-**CONTAINER:** redes_enrutamiento_god10_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.112.113 -a ping -c1 -W1 google.es -a echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Destinos NO alcanzables
-
-**CONTAINER:** redes_enrutamiento_dir1_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.112.113 || ping -c1 -W1 192.168.120.121 || echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Destinos alcanzables
-
-**CONTAINER:** redes_enrutamiento_dir1_1
-
-**COMANDO:** bash -c "ping -c1 -W1 google.es -a echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Destinos NO alcanzables
-
-**CONTAINER:** redes_enrutamiento_sat1_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos alcanzables
-
-**CONTAINER:** redes_enrutamiento_sat1_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 -a ping -c1 -W1 192.168.120.121 -a ping -c1 -W1 google.es -a echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos NO alcanzables
-
-**CONTAINER:** redes_enrutamiento_sat10_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.111.112 || echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos alcanzables
-
-**CONTAINER:** redes_enrutamiento_sat10_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 -a ping -c1 -W1 192.168.120.121 -a ping -c1 -W1 google.es -a echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 0.5
-***********************************************
-### TEST: Destinos NO alcanzables
-
-**CONTAINER:** redes_enrutamiento_server1_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.110.111 || ping -c1 -W1 192.168.111.112 || echo ok"
-
-**SALIDA:** ok
-
-**CÓDIGO SALIDA:** 0
-
-**PUNTUACIÓN:** 1
-***********************************************
-### TEST: Destinos alcanzables
-
-**CONTAINER:** redes_enrutamiento_server1_1
-
-**COMANDO:** bash -c "ping -c1 -W1 192.168.112.113 -a ping -c1 -W1 google.es -a echo ok"
 
 **SALIDA:** ok
 
@@ -243,7 +104,7 @@
 **PUNTUACIÓN:** 1
 
 ### NOTA DE LA TAREA: 10.0)
-2020-07-12 19:54:24,419 p=7503 u=javierfp n=ansible | TASK [entregar : FORZAR ENTREGA DE TAREA] ****************************************************************************************************************************************************************
-2020-07-12 19:54:24,451 p=7503 u=javierfp n=ansible | skipping: [localhost]
-2020-07-12 19:54:24,453 p=7503 u=javierfp n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************
-2020-07-12 19:54:24,454 p=7503 u=javierfp n=ansible | localhost                  : ok=12   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-07-15 19:37:14,087 p=17773 u=javierfp n=ansible | TASK [entregar : FORZAR ENTREGA DE TAREA] ****************************************************************************************************************************************************************
+2020-07-15 19:37:14,118 p=17773 u=javierfp n=ansible | skipping: [localhost]
+2020-07-15 19:37:14,126 p=17773 u=javierfp n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************
+2020-07-15 19:37:14,126 p=17773 u=javierfp n=ansible | localhost                  : ok=12   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

@@ -1,0 +1,35 @@
+---
+# vars file for roles/redes_direccionamiento
+
+#Comandos de test a ejecutar
+tests:
+ - container: "redes_direccionamiento_host1_1"
+   comandos:
+   - nombre: Destinos alcanzables desde host1
+     comando: bash -c "ping -c1 -W1 192.168.3.3 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok"
+     resultado: "ok"
+     puntuacion: 2.25
+ - container: "redes_direccionamiento_host2_1"
+   comandos:
+   - nombre: Destinos alcanzables desde host2
+     comando: bash -c "ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.254 && ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.5 && echo ok"
+     resultado: "ok"
+     puntuacion: 2.25
+ - container: "redes_direccionamiento_host3_1"
+   comandos:
+   - nombre: Destinos alcanzables desde host3
+     comando: bash -c "ping -c1 -W1 192.168.5.5 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok"
+     resultado: "ok"
+     puntuacion: 2.25
+ - container: "redes_direccionamiento_host4_1"
+   comandos:
+   - nombre: Destinos alcanzables desde host4
+     comando: bash -c "ping -c1 -W1 192.168.5.4 && ping -c1 -W1 192.168.5.254 && ping -c1 -W1 192.168.3.2 && ping -c1 -W1 192.168.3.3 && echo ok"
+     resultado: "ok"
+     puntuacion: 2.25
+ - container: "redes_direccionamiento_enc35_1"
+   comandos:
+   - nombre: Destinos alcanzables desde enc35
+     comando: bash -c "ping -c1 -W1 google.es && echo ok"
+     resultado: "ok"
+     puntuacion: 1

@@ -1,6 +1,6 @@
 galaxy_info:
   author: javierfp
-  description: Tests de Tarea sa_gestion
+  description: Tests de Tarea intro_commands
   company: Módulo SI
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -49,9 +49,9 @@ galaxy_info:
 
 dependencies:
 #Pasamos la lista de containers del escenario para hacer el start
-- { role: start, containers: [sa_gestion_sa_1]}
+- { role: start, containers: [intro_commands_intarea_1]}
 - { role: tests, comandos: "{{ tests }}"}
-- { role: entregar, practica: sa_gestion}
+- { role: entregar, practica: intro_commands}
 #Pasamos la lista de containers del escenario para hacer el stop
 #- { role: stop, containers: [sa_crear_sa_1]}
 

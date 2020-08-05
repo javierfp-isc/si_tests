@@ -1,0 +1,46 @@
+---
+# vars file for roles/sa_gestion
+#Comandos de test a ejecutar
+tests:
+ - container: "intro_commands_intarea_1"
+   comandos:
+   - nombre: Ejercicio1
+     comando: test.sh ejercicio1
+     resultado: "\"Starting nginx\""
+     puntuacion: 1
+   - nombre: Ejercicio2
+     comando: test.sh ejercicio2
+     resultado: -V
+     puntuacion: 0
+   - nombre: Test nginx no corriendo
+     comando: bash -c "service nginx status"
+     resultado: "\"nginx is not running\""
+     puntuacion: 1
+   - nombre: Ejercicio3
+     comando: test.sh ejercicio3
+     resultado: -V
+     puntuacion: 0
+   - nombre: Ejercicio4
+     comando: test.sh ejercicio4
+     resultado: -c "/usr/sbin/nginx" | grep 1
+     puntuacion: 1
+   - nombre: Ejercicio5
+     comando: test.sh ejercicio5
+     resultado: -V
+     puntuacion: 0
+   - nombre: Test yes en segundo plano
+     comando: tail -1 /tmp/yes
+     resultado: "y"
+     puntuacion: 1
+   - nombre: Parar yes
+     comando: pkill yes
+     resultado: -V
+     puntuacion: 0
+   - nombre: Ejercicio6
+     comando: test.sh ejercicio6
+     resultado: ""
+     puntuacion: 1
+   - nombre: Ejercicio7
+     comando: test.sh ejercicio7
+     resultado: ""
+     puntuacion: 1

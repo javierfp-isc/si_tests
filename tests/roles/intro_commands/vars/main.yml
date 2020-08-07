@@ -29,18 +29,38 @@ tests:
      resultado: -V
      puntuacion: 0
    - nombre: Test yes en segundo plano
-     comando: tail -1 /tmp/yes
-     resultado: "y"
+     comando: bash -c "pidof yes | wc -l"
+     resultado: "1"
      puntuacion: 1
-   - nombre: Parar yes
-     comando: pkill yes
+   - nombre: Ejercicio6
+     comando: test.sh ejercicio6 
      resultado: -V
      puntuacion: 0
-   - nombre: Ejercicio6
-     comando: test.sh ejercicio6
-     resultado: ""
+   - nombre: Test parada yes anterior
+     comando: bash -c "pidof yes | wc -l"
+     resultado: "0"
      puntuacion: 1
    - nombre: Ejercicio7
      comando: test.sh ejercicio7
-     resultado: ""
+     resultado: "-V"
      puntuacion: 1
+   - nombre: Test yes prioridad 0
+     comando: bash -c "ps -o command -o ni | grep "^yes" | grep \"\-20\""
+     resultado: "yes"
+     puntuacion: 1
+   - nombre: Ejercicio8
+     comando: test.sh ejercicio8 
+     resultado: -V
+     puntuacion: 0
+   - nombre: Test ningun yes corriendo
+     comando: bash -c "pidof yes | wc -l"
+     resultado: "0"
+     puntuacion: 1
+   - nombre: Ejercicio9
+     comando: test.sh ejercicio9 
+     resultado: -V
+     puntuacion: 0
+   - nombre: Test pmap nginx
+     comando: bash -c "tail -1 /tmp/nginx"
+     resultado: "\"total kB\""
+     puntuacion: 2

@@ -97,19 +97,19 @@ Written by Mike Haertel and others; see
 
 **CONTAINER:** intro_commands_intarea_1
 
-**COMANDO:** tail -1 /tmp/yes
+**COMANDO:** bash -c "pidof yes | wc -l"
 
-**SALIDA:** y
+**SALIDA:** 1
 
 **CÓDIGO SALIDA:** 0
 
 **PUNTUACIÓN:** 1
 ***********************************************
-### TEST: Parar yes
+### TEST: Ejercicio6
 
 **CONTAINER:** intro_commands_intarea_1
 
-**COMANDO:** pkill yes
+**COMANDO:** test.sh ejercicio6
 
 **SALIDA:** grep (GNU grep) 3.3
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -124,18 +124,17 @@ Written by Mike Haertel and others; see
 
 **PUNTUACIÓN:** 0
 ***********************************************
-### TEST: Ejercicio6
+### TEST: Test parada yes anterior
 
 **CONTAINER:** intro_commands_intarea_1
 
-**COMANDO:** test.sh ejercicio6
+**COMANDO:** bash -c "pidof yes | wc -l"
 
-**SALIDA:** 
+**SALIDA:** 0
 
-**CÓDIGO SALIDA:** 2
+**CÓDIGO SALIDA:** 0
 
-**ERROR!** Usage: grep [OPTION]... PATTERNS [FILE]...
-Pruebe 'grep --help' para más información.
+**PUNTUACIÓN:** 1
 ***********************************************
 ### TEST: Ejercicio7
 
@@ -143,12 +142,92 @@ Pruebe 'grep --help' para más información.
 
 **COMANDO:** test.sh ejercicio7
 
-**SALIDA:** 
+**SALIDA:** grep (GNU grep) 3.3
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
 
-**CÓDIGO SALIDA:** 2
+Written by Mike Haertel and others; see
+<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>.
 
-**ERROR!** Usage: grep [OPTION]... PATTERNS [FILE]...
-Pruebe 'grep --help' para más información.
+**CÓDIGO SALIDA:** 0
 
-### NOTA DE LA TAREA: 4.0
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Test yes prioridad 0
+
+**CONTAINER:** intro_commands_intarea_1
+
+**COMANDO:** bash -c "ps -o command -o ni | grep "^yes" | grep \"\-20\""
+
+**SALIDA:** yes                         -20
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Ejercicio8
+
+**CONTAINER:** intro_commands_intarea_1
+
+**COMANDO:** test.sh ejercicio8
+
+**SALIDA:** grep (GNU grep) 3.3
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Haertel and others; see
+<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>.
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0
+***********************************************
+### TEST: Test ningun yes corriendo
+
+**CONTAINER:** intro_commands_intarea_1
+
+**COMANDO:** bash -c "pidof yes | wc -l"
+
+**SALIDA:** 0
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 1
+***********************************************
+### TEST: Ejercicio9
+
+**CONTAINER:** intro_commands_intarea_1
+
+**COMANDO:** test.sh ejercicio9
+
+**SALIDA:** grep (GNU grep) 3.3
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Haertel and others; see
+<https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>.
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 0
+***********************************************
+### TEST: Test pmap nginx
+
+**CONTAINER:** intro_commands_intarea_1
+
+**COMANDO:** bash -c "tail -1 /tmp/nginx"
+
+**SALIDA:** total kB           69736    2592    1652
+
+**CÓDIGO SALIDA:** 0
+
+**PUNTUACIÓN:** 2
+
+### NOTA DE LA TAREA: 10.0
 
